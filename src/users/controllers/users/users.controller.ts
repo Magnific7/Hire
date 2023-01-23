@@ -76,9 +76,7 @@ export class UsersController {
   ) {
     console.log(id, postId);
     const user = this.UsersService.fetchUserId(id);
-    if (!user)
-      throw new HttpException('User not found', HttpStatus.BAD_REQUEST);
+    if (!user) throw new HttpException('User not found', HttpStatus.NOT_FOUND);
     return user;
   }
-
 }
