@@ -5,17 +5,19 @@ import {
   TypeOrmModuleAsyncOptions,
   TypeOrmModuleOptions,
 } from '@nestjs/typeorm';
-import { join } from 'path';
 
-const DATABASE_URL: string = process.env.DATABASE_URL;
 
 const dbConfig: TypeOrmModuleOptions = {
   type: 'postgres',
-  url: DATABASE_URL,
-  entities: [join(__dirname, '**', '*.entity.{ts,js}')],
+  host: process.env.DATABASE_HOST,
+  port: Number(process.env.DATABASE_PORT),
+  username: process.env.DATABASE_USERNAME,
+  password: process.env.DATABASE_PASSWORD,
+  database: process.env.DATABASE_NAME,
+  synchronize: true,
+  entities: ['dist/**/entities/*{.ts,.js}'],
 
   // logging: process.env.NODE_ENV === 'development',
-  migrations: [join(__dirname, './migrations/*{.ts,.js}')],
 };
 
 export const DatabaseModule: TypeOrmModuleAsyncOptions = {

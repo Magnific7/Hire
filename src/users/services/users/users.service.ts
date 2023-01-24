@@ -32,7 +32,8 @@ export class UsersService {
     {
       // const newUser = new User ;
       // console.log('userDetails', userDetails);
-      return this.userRepository.save(userDetails);
+      const newUser = Object.assign(new User(), userDetails);
+      return this.userRepository.save(newUser);
     }
   }
 
