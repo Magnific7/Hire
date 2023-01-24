@@ -14,4 +14,8 @@ export class CreateUserDto {
   @ApiProperty()
   @IsNotEmpty()
   age: number;
+
+  @ApiProperty()
+  @IsNotEmpty()
+  role: string;
 }

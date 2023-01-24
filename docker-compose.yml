@@ -6,4 +6,13 @@ services:
     build: .
     ports:
      - ${PORT}:${PORT}
+    environment:
+      - DATABASE_HOST=$DATABASE_HOST
+      - DATABASE_PORT=$DATABASE_PORT
+      - DATABASE_USER=$DATABASE_USER
+      - DATABASE_PASSWORD=$DATABASE_PASSWORD
+      - DATABASE_DB=$DATABASE_DB
+      - DATABASE_URL=$DATABASE_URL
+      - ALLOWED_HOSTS=$ALLOWED_HOSTS
+
 
