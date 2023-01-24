@@ -1,0 +1,9 @@
+version: '3.8'
+services:
+  hire_api:
+    container_name: hire_api
+    restart: always
+    build: .
+    ports:
+     - ${PORT}:${PORT}
+

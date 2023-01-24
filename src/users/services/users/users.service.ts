@@ -8,8 +8,7 @@ export class UsersService {
     { username: 'user2', email: 'heretwo@kg' },
     { username: 'mag', email: 'heretwo@kg' },
     { username: 'mag', email: 'heretwo@kg' },
-    { username: 'user2', email: 'heretwo@kg' }
-
+    { username: 'user2', email: 'heretwo@kg' },
   ];
   fetchUsers(name?: string) {
     if (name) {
